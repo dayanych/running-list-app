@@ -15,7 +15,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "@stylistic"],
+  "plugins": ["react", "@typescript-eslint", "@stylistic", "simple-import-sort"],
   "rules": {
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
@@ -24,12 +24,19 @@
     "array-bracket-newline": ["error", { "multiline": true }],
     "object-curly-newline": ["error", { "multiline": true }],
     "no-console": "error",
+    "no-restricted-imports": ["error", {
+      "patterns": [".*"]
+    }],
     "@stylistic/semi": [2, "always"],
     "@stylistic/semi-style": ["error", "last"],
     "@stylistic/eol-last": ["error", "always"],
+    "@stylistic/object-curly-spacing": ["error", "always"],
+    "@stylistic/array-bracket-spacing": ["error", "never"],
+    "@stylistic/no-trailing-spaces": "error",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/indent": ["error", 2],
     "@typescript-eslint/no-use-before-define": ["error"],
-    "@typescript-eslint/no-shadow": ["error"]
+    "@typescript-eslint/no-shadow": ["error"],
+    "simple-import-sort/imports": "error"
   }
 }

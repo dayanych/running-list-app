@@ -1,35 +1,42 @@
 import React, { useState } from 'react';
-import styles from './form.module.scss';
+import styles from 'src/components/form/form.module.scss';
+import { AuthService } from 'src/firebase/auth/auth.service';
+
+interface UserAuthDataInterface {
+  email: string;
+  password: string;
+}
 
 interface FormProps {
-  onFinishChange: () => void;
+  onFinishChange: (userData: UserAuthDataInterface) => void;
 }
 
 const Form = ({ onFinishChange }: FormProps) => {
-  const [userData, setUserData] = useState({
+  const [userAuthData, setUserAuthData] = useState<UserAuthDataInterface>({
     email: '',
     password: '',
   });
 
   const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const password = event.target.value;
-    setUserData({
-      ...userData,
+    setUserAuthData({
+      ...userAuthData,
       password,
     });
   };
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const password = event.target.value;
-    setUserData({
-      ...userData,
-      password,
+    const email = event.target.value;
+    setUserAuthData({
+      ...userAuthData,
+      email,
     });
   };
 
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-    onFinishChange();
+    onFinishChange(userAuthData);
+    AuthService.listenAuthStateChange();
   };
 
   return (
@@ -39,14 +46,14 @@ const Form = ({ onFinishChange }: FormProps) => {
           className={styles.input}
           type="email"
           placeholder="Email"
-          value={userData.email}
+          value={userAuthData.email}
           onChange={handleEmailChange}
         />
         <input
           className={styles.input}
           type="password"
           placeholder="Password"
-          value={userData.password}
+          value={userAuthData.password}
           onChange={handlePasswordChange}
         />
         <button className={styles.button} type="submit" onClick={handleSubmit}>

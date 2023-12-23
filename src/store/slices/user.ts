@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { User } from '../../common/entities/user';
+import { User } from 'src/common/entities/user';
 
 interface UserState {
   user: User | null;
