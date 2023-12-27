@@ -1,9 +1,11 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import App from 'src/app';
+import { About } from 'src/pages/about';
 import Login from 'src/pages/auth/login';
 import Registration from 'src/pages/auth/registration';
-import Home from 'src/pages/home';
+import { Home } from 'src/pages/home';
+import { NotFoundPage } from 'src/pages/not-found-page';
 
 export const router = createBrowserRouter([
   {
@@ -24,11 +26,11 @@ export const router = createBrowserRouter([
       },
       {
         path: '/about',
-        element: <h1>About</h1>,
+        element: <About />,
       },
       {
         path: '*',
-        element: <h1>404</h1>,
+        element: <NotFoundPage />,
       },
     ],
   },

@@ -1,0 +1,22 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  max-width: 500px;
+  padding: 5px 10px;
+}
+
+.button {
+  max-width: 200px;
+  padding: 10px 0;
+}

@@ -1,1 +1,1 @@
-export const primaryTheme = { colorPrimary: '#00b96b' };
+export const primaryTheme = { colorPrimary: '#000000' };
