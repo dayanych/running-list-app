@@ -9,9 +9,9 @@ import { doc, getDoc } from 'firebase/firestore';
 import { PATH_TO_USERS_COLLECTION } from 'src/common/constants/paths';
 import { UserLoginData } from 'src/common/types/user-login-data';
 import { UserRegistrationData } from 'src/common/types/user-registration-data';
-import { app, db } from 'src/firebase/config/firebase.config';
-import { UserDto } from 'src/firebase/users/user.dto';
-import { UsersService } from 'src/firebase/users/users.service';
+import { app, db } from 'src/service/config/firebase.config';
+import { UserDto } from 'src/service/users/user.dto';
+import { UsersService } from 'src/service/users/users.service';
 
 const auth = getAuth(app);
 

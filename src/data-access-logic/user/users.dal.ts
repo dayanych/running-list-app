@@ -1,7 +1,7 @@
 import { User } from 'src/common/entities/user';
 import { convertUserDtoToUser } from 'src/data-access-logic/user/converter/user-dto-to-user';
 import { convertUserToUserDto } from 'src/data-access-logic/user/converter/user-to-user-dto';
-import { UsersService } from 'src/firebase/users/users.service';
+import { UsersService } from 'src/service/users/users.service';
 
 export class UsersDal {
   public static async getUser(userId: string): Promise<User | null> {

@@ -1,5 +1,5 @@
 import { User } from 'src/common/entities/user';
-import { UserDto } from 'src/firebase/users/user.dto';
+import { UserDto } from 'src/service/users/user.dto';
 
 export const convertUserDtoToUser = (userDto: UserDto): User => {
   return {

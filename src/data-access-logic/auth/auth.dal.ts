@@ -5,7 +5,7 @@ import { getAuthErrorMessage } from 'src/common/helpers/getAuthErrorMessage';
 import { UserLoginData } from 'src/common/types/user-login-data';
 import { UserRegistrationData } from 'src/common/types/user-registration-data';
 import { UsersDal } from 'src/data-access-logic/user/users.dal';
-import { AuthService } from 'src/firebase/auth/auth.service';
+import { AuthService } from 'src/service/auth/auth.service';
 
 export class AuthDal {
   public static async login(
