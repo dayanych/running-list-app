@@ -1,7 +1,7 @@
 import { doc, getDoc, setDoc, updateDoc } from 'firebase/firestore';
 import { PATH_TO_USERS_COLLECTION } from 'src/common/constants/paths';
+import { UserDto } from 'src/common/dto/user.dto';
 import { db } from 'src/service/config/firebase.config';
-import { UserDto } from 'src/service/users/user.dto';
 
 export class UsersService {
   public static async getUser(id: string): Promise<UserDto | null> {

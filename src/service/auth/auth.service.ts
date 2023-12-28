@@ -7,10 +7,10 @@ import {
 } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { PATH_TO_USERS_COLLECTION } from 'src/common/constants/paths';
+import { UserDto } from 'src/common/dto/user.dto';
 import { UserLoginData } from 'src/common/types/user-login-data';
 import { UserRegistrationData } from 'src/common/types/user-registration-data';
 import { app, db } from 'src/service/config/firebase.config';
-import { UserDto } from 'src/service/users/user.dto';
 import { UsersService } from 'src/service/users/users.service';
 
 const auth = getAuth(app);

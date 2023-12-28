@@ -1,5 +1,5 @@
+import { UserDto } from 'src/common/dto/user.dto';
 import { User } from 'src/common/entities/user';
-import { UserDto } from 'src/service/users/user.dto';
 
 export const convertUserDtoToUser = (userDto: UserDto): User => {
   return {
