@@ -1,7 +1,7 @@
 import { MessageInstance } from 'antd/es/message/interface';
 import { FirebaseError } from 'firebase/app';
 import { User } from 'src/common/entities/user';
-import { getAuthErrorMessage } from 'src/common/helpers/getAuthErrorMessage';
+import { getAuthErrorMessage } from 'src/common/helpers/get-auth-error-message';
 import { UserLoginData } from 'src/common/types/user-login-data';
 import { UserRegistrationData } from 'src/common/types/user-registration-data';
 import { UsersDal } from 'src/data-access-logic/user/users.dal';
