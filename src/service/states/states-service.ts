@@ -17,7 +17,7 @@ type StateDtoWithoutId = Omit<StateDto, 'id'>;
 export class StatesService {
   public static getStatesByTaskId = async (
     taskId: string,
-  ): Promise<StateDto[] | null> => {
+  ): Promise<StateDto[]> => {
     const statesCollectionRef = collection(db, PATH_TO_STATES_COLLECTION);
     const statesSnaphots = await getDocs(
       query(statesCollectionRef, where('task_id', '==', taskId)),

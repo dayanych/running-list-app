@@ -9,10 +9,6 @@ export class StatesDal {
   public static async getStatesByTaskId(taskId: string): Promise<State[]> {
     const statesDto = await StatesService.getStatesByTaskId(taskId);
 
-    if (!statesDto) {
-      return [];
-    }
-
     const states = statesDto.map((stateDto) =>
       converterStateDtoToState(stateDto),
     );
