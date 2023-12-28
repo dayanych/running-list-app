@@ -1,7 +1,7 @@
 import { State } from 'src/common/entities/state';
 import { converterStateDtoToState } from 'src/data-access-logic/states/converter/state-dto-to-state';
 import { converterStateToStateDto } from 'src/data-access-logic/states/converter/state-to-state-dto';
-import { StatesService } from 'src/service/states/states-service';
+import { StatesService } from 'src/service/states/states.service';
 
 type StateWithoutId = Omit<State, 'id'>;
 

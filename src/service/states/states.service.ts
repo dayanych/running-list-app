@@ -9,8 +9,8 @@ import {
   where,
 } from 'firebase/firestore';
 import { PATH_TO_STATES_COLLECTION } from 'src/common/constants/paths';
+import { StateDto } from 'src/common/dto/state.dto';
 import { db } from 'src/service/config/firebase.config';
-import { StateDto } from 'src/service/states/state.dto';
 
 type StateDtoWithoutId = Omit<StateDto, 'id'>;
 

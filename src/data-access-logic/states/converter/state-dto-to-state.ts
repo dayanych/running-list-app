@@ -1,5 +1,5 @@
+import { StateDto } from 'src/common/dto/state.dto';
 import { State } from 'src/common/entities/state';
-import { StateDto } from 'src/service/states/state.dto';
 
 export const converterStateDtoToState = (stateDto: StateDto): State => {
   return {
