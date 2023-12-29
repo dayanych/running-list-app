@@ -20,11 +20,11 @@ export class TasksDal {
     taskDtoWithoutId: TaskWithoutId,
   ): Promise<void> {
     const taskDto = {
-      name: taskDtoWithoutId.name,
+      title: taskDtoWithoutId.title,
       user_id: taskDtoWithoutId.userId,
-      state_ids: taskDtoWithoutId.stateIds,
       week: taskDtoWithoutId.week,
       year: taskDtoWithoutId.year,
+      color: taskDtoWithoutId.color,
       created_at: new Date(),
     };
 

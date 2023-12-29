@@ -1,9 +1,9 @@
 export type TaskDto = {
   id: string;
-  name: string;
+  title: string;
   user_id: string;
-  state_ids: string[];
   week: number;
   year: number;
+  color: string;
   created_at: Date;
 };

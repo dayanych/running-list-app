@@ -4,11 +4,11 @@ import { Task } from 'src/common/entities/task';
 export const converterTaskDtoToTask = (taskDto: TaskDto): Task => {
   return {
     id: taskDto.id,
-    name: taskDto.name,
+    title: taskDto.title,
     week: taskDto.week,
     year: taskDto.year,
+    color: taskDto.color,
     userId: taskDto.user_id,
-    stateIds: taskDto.state_ids,
     createdAt: taskDto.created_at,
   };
 };

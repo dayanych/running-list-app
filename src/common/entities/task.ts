@@ -1,9 +1,9 @@
 export interface Task {
   id: string;
-  name: string;
+  title: string;
   userId: string;
   week: number;
   year: number;
-  stateIds: string[];
+  color: string;
   createdAt: Date;
 }
