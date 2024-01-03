@@ -26,9 +26,9 @@ export class StatesService {
     return statesSnaphots.docs.map((stateDoc) => stateDoc.data() as StateDto);
   };
 
-  public static async createState(
+  public static async createAndGetState(
     stateWithoutIdDto: StateDtoWithoutId,
-  ): Promise<void> {
+  ): Promise<StateDto> {
     const docRef = doc(collection(db, PATH_TO_STATES_COLLECTION));
     const stateDto: StateDto = {
       ...stateWithoutIdDto,
@@ -36,6 +36,8 @@ export class StatesService {
     };
 
     await setDoc(docRef, stateDto);
+
+    return stateDto;
   }
 
   public static async updateState(stateDto: StateDto): Promise<void> {

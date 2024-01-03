@@ -1,0 +1,60 @@
+$empty-first-px: 5px;
+$from: 5px;
+$to: 13px;
+$main-color: #363636;
+$size-delay: 22px;
+$size-x: 27px;
+
+.status {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullDone {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent $empty-first-px,
+      $main-color $from,
+      $main-color $to
+  );
+}
+
+.halfDone {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent $empty-first-px,
+      $main-color $from,
+      $main-color $to
+  );
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.delay svg {
+  width: $size-delay;
+  height: $size-delay;
+
+  path {
+    fill: $main-color;
+  }
+}
+
+.failed svg {
+  width: $size-x;
+  height: $size-x;
+
+  path {
+    fill: $main-color;
+  }
+}

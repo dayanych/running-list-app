@@ -1,16 +1,18 @@
+@import "../../assets/styles/variables";
+
 .title {
   font-weight: 700;
   margin: 10px 0;
 }
 
 .small {
-  font-size: 24px;
+  font-size: $small-title-font-size;
 }
 
 .medium {
-  font-size: 32px;
+  font-size: $medium-title-font-size;
 }
 
 .large {
-  font-size: 42px;
+  font-size: $large-title-font-size;
 }

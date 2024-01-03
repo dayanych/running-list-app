@@ -1,0 +1,13 @@
+$main-color: #363636;
+
+.status {
+  width: 30px;
+  height: 30px;
+}
+
+.empty {
+  width: 25px;
+  height: 25px;
+  border: 1px solid $main-color;
+  border-radius: 5px;
+}
