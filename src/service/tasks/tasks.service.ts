@@ -15,15 +15,17 @@ import { db } from 'src/service/config/firebase.config';
 type TaskDtoWithoutId = Omit<TaskDto, 'id'>;
 
 export class TasksService {
-  public static getTasksByUserIdAndWeek = async (
+  public static getTasksByUserIdAndYearAndWeek = async (
     userId: string,
     week: number,
+    year: number,
   ): Promise<TaskDto[]> => {
     const tasksCollectionRef = collection(db, PATH_TO_TASKS_COLLECTION);
     const tasksSnaphots = await getDocs(
       query(
         tasksCollectionRef,
         where('user_id', '==', userId),
+        where('year', '==', year),
         where('week', '==', week),
       ),
     );
@@ -31,9 +33,9 @@ export class TasksService {
     return tasksSnaphots.docs.map((taskDoc) => taskDoc.data() as TaskDto);
   };
 
-  public static async createTask(
+  public static async createAndGetTask(
     taskDtoWithoutId: TaskDtoWithoutId,
-  ): Promise<void> {
+  ): Promise<TaskDto> {
     const docRef = doc(collection(db, PATH_TO_TASKS_COLLECTION));
     const taskDto: TaskDto = {
       ...taskDtoWithoutId,
@@ -41,6 +43,8 @@ export class TasksService {
     };
 
     await setDoc(docRef, taskDto);
+
+    return taskDto;
   }
 
   public static async updateTask(taskDto: TaskDto): Promise<void> {

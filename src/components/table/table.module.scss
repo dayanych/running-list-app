@@ -1,0 +1,19 @@
+@import "../../assets/styles/variables";
+
+.table {
+  border-spacing: $task-block-spacing;
+}
+
+.headTable {
+  height: $task-th-block-height;
+
+  th {
+    width: $task-block-width;
+    height: $task-th-block-height;
+  }
+}
+
+.dateValue{
+  font-size: 12px;
+  color: #999999;
+}

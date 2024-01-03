@@ -1,0 +1,29 @@
+@import "../../assets/styles/variables";
+
+$blocks-distance: 180px;
+$paragraph-font-size: 18px;
+
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: $task-block-spacing;
+}
+
+.taskItemBlock {
+  height: $task-block-height;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    margin-right: $distance-between-line;
+    width: $blocks-distance;
+    height: 1px;
+    background-color: #000;
+  }
+}
+
+.paragraphItem {
+  margin-bottom: 0 !important;
+  font-size: $paragraph-font-size;
+}

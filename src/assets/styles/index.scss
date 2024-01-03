@@ -1,0 +1,36 @@
+@import "variables";
+
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+button {
+  min-width: 100px;
+  height: 30px;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid black;
+  background: none;
+}
+
+:root {
+  margin: 2rem;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.cell {
+  cursor: pointer;
+  width: $task-block-width;
+  height: $task-block-height;
+  border: $task-block-border;
+}
