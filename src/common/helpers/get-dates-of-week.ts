@@ -1,5 +1,18 @@
-export const getDatesOfWeek = (year: number, weekNumber: number): string[] => {
-  const date = new Date(year, 0, 1 + (weekNumber - 1) * 7);
+import moment from 'moment';
+
+const getFirstDateOfWeek = (year: number, weekNumber: number): Date => {
+  return moment().year(year).week(weekNumber).day('monday').toDate();
+};
+
+export const getDatesOfWeek = (
+  year: number,
+  weekNumber: number,
+): {
+  week: string[];
+  firstDate: Date;
+} => {
+  const date = getFirstDateOfWeek(year, weekNumber);
+  const firstDate = new Date(date);
   const dates = [];
 
   for (let i = 0; i < 7; i++) {
@@ -8,5 +21,5 @@ export const getDatesOfWeek = (year: number, weekNumber: number): string[] => {
       date.toLocaleString('ru-RU', { day: '2-digit', month: '2-digit' }),
     );
   }
-  return dates;
+  return { week: dates, firstDate };
 };
