@@ -12,7 +12,7 @@ interface TableProps {
 
 const Table = ({ tasks }: TableProps) => {
   const { year, weekNumber } = useWeekParam();
-  const week = getDatesOfWeek(year, weekNumber);
+  const { week } = getDatesOfWeek(year, weekNumber);
 
   return (
     <table className={styles.table}>
