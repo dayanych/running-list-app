@@ -13,22 +13,24 @@ const WeekPage = () => {
   const { year, weekNumber } = useWeekParam();
   const [tasks, setTasks] = useState<Task[]>([]);
 
-  if (!user) {
-    return null;
-  }
-
   const loadTasks = async () => {
-    const userTasks = await TasksDal.getTasksByUserIdAndYearAndWeek(
-      user.id,
-      year,
-      weekNumber,
-    );
-    setTasks(userTasks);
+    if (user) {
+      const userTasks = await TasksDal.getTasksByUserIdAndYearAndWeek(
+        user.id,
+        year,
+        weekNumber,
+      );
+      setTasks(userTasks);
+    }
   };
 
   useEffect(() => {
     loadTasks();
   }, [weekNumber]);
+
+  if (!user) {
+    return null;
+  }
 
   return (
     <>
