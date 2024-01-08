@@ -1,7 +1,11 @@
-import moment from 'moment';
-
 const getFirstDateOfWeek = (year: number, weekNumber: number): Date => {
-  return moment().year(year).week(weekNumber).day('monday').toDate();
+  const date = new Date(year, 0, 1);
+  const dayOfWeek = date.getDay();
+  date.setDate(
+    date.getDate() + (dayOfWeek <= 4 ? 1 - dayOfWeek : 8 - dayOfWeek),
+  );
+  date.setDate(date.getDate() + (weekNumber - 1) * 7);
+  return date;
 };
 
 export const getDatesOfWeek = (
@@ -17,9 +21,7 @@ export const getDatesOfWeek = (
 
   for (let i = 0; i < 7; i++) {
     date.setDate(date.getDate() + (i > 0 ? 1 : 0));
-    dates.push(
-      date.toLocaleString('ru-RU', { day: '2-digit', month: '2-digit' }),
-    );
+    dates.push(date.toLocaleString('ru-RU', { day: '2-digit' }));
   }
   return { week: dates, firstDate };
 };

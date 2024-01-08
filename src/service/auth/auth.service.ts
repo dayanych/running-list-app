@@ -9,6 +9,11 @@ import { UserLoginData } from 'src/common/types/user-login-data';
 import { UserRegistrationData } from 'src/common/types/user-registration-data';
 import { app } from 'src/service/config/firebase.config';
 
+interface ListenAuthStateChangeParams {
+  onLogin: (userId: string) => void;
+  onLogout: () => void;
+}
+
 const auth = getAuth(app);
 
 export class AuthService {
@@ -38,10 +43,12 @@ export class AuthService {
     return userCredential.user;
   };
 
-  public static listenAuthStateChange() {
+  public static listenAuthStateChange(params: ListenAuthStateChangeParams) {
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
-        return;
+        params.onLogout();
+      } else {
+        params.onLogin(user.uid);
       }
     });
   }

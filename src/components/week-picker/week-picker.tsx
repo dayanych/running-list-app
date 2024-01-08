@@ -1,23 +1,18 @@
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import type { DatePickerProps } from 'antd';
-import { DatePicker } from 'antd';
 import dayjs from 'dayjs';
-import updateLocale from 'dayjs/plugin/updateLocale';
 import moment from 'moment';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { DatePicker } from 'src/common/helpers/date-picker';
 import { getDatesOfWeek } from 'src/common/helpers/get-dates-of-week';
 import { getMaxWeek } from 'src/common/helpers/get-max-week';
 import { getWeekNumber } from 'src/common/helpers/get-week-number';
 import { useWeekParam } from 'src/common/hooks/use-week-and-year';
 import styles from 'src/components/week-picker/week-picker.module.scss';
 
-moment.updateLocale('en', { week: { dow: 1 } });
-dayjs.extend(updateLocale);
-dayjs.updateLocale('en', { weekStart: 1 });
-
 const customWeekStartEndFormat: DatePickerProps['format'] = (value) => {
-  const weekFormat = 'DD.MM';
+  const weekFormat = 'DD.MM.YY';
   const date = dayjs(value).toDate();
   const firstDate = moment(date).startOf('week').format(weekFormat);
   const lastDate = moment(date).endOf('week').format(weekFormat);
