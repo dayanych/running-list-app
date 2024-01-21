@@ -1,15 +1,22 @@
 @import "../../assets/styles/variables";
 
 .table {
-  border-spacing: $task-block-spacing;
+  display: flex;
+  flex-direction: column;
+  gap: $state-spacing-row  $state-spacing-column;
 }
 
 .headTable {
-  height: $task-th-block-height;
+  height: $header-block-height;
+  display: flex;
+  column-gap: $state-spacing-column;
 
-  th {
-    width: $task-block-width;
-    height: $task-th-block-height;
+  .dayNameWrapper {
+    width: $state-block-width;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 

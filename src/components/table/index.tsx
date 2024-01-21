@@ -1,3 +1,3 @@
-import Table from 'src/components/table/table';
+import StatesTable from 'src/components/table/table';
 
-export { Table };
+export { StatesTable };

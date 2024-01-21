@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Task } from 'src/common/entities/task';
 import { useUser } from 'src/common/hooks/use-auth';
 import { useWeekParam } from 'src/common/hooks/use-week-and-year';
-import { Table } from 'src/components/table';
+import { StatesTable } from 'src/components/table';
 import { TaskList } from 'src/components/task-list';
 import { WeekPicker } from 'src/components/week-picker';
 import { TasksDal } from 'src/data-access-logic/tasks/tasks.dal';
@@ -37,7 +37,7 @@ const WeekPage = () => {
       <WeekPicker />
       <div className={styles.mainBlock}>
         <div>
-          <Table tasks={tasks} />
+          <StatesTable tasks={tasks} />
         </div>
         <div className={styles.tasksList}>
           <TaskList

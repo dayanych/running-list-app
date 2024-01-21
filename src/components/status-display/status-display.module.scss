@@ -1,17 +1,20 @@
-$empty-first-px: 5px;
-$from: 5px;
-$to: 13px;
-$main-color: #363636;
-$size-delay: 22px;
-$size-x: 27px;
+@import "../../assets/styles/variables";
 
 .status {
   width: 100%;
   height: 100%;
-  padding: 5px;
+  padding: $state-padding;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .fullDone {
@@ -20,9 +23,9 @@ $size-x: 27px;
   background: repeating-linear-gradient(
       135deg,
       transparent,
-      transparent $empty-first-px,
-      $main-color $from,
-      $main-color $to
+      transparent $fulldone-empty-space,
+      $status-color $fulldone-from,
+      $status-color $fulldone-to
   );
 }
 
@@ -34,27 +37,27 @@ $size-x: 27px;
   background: repeating-linear-gradient(
       135deg,
       transparent,
-      transparent $empty-first-px,
-      $main-color $from,
-      $main-color $to
+      transparent $fulldone-empty-space,
+      $status-color $fulldone-from,
+      $status-color $fulldone-to
   );
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 .delay svg {
-  width: $size-delay;
-  height: $size-delay;
+  width: $delay-size;
+  height: $delay-size;
 
   path {
-    fill: $main-color;
+    fill: $status-color;
   }
 }
 
 .failed svg {
-  width: $size-x;
-  height: $size-x;
+  width: $x-size;
+  height: $x-size;
 
   path {
-    fill: $main-color;
+    fill: $status-color;
   }
 }

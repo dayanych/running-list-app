@@ -1,0 +1,6 @@
+@import "../../assets/styles/variables";
+
+.wrapper {
+  display: flex;
+  gap: $state-spacing-row $state-spacing-column;
+}
