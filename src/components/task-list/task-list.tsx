@@ -1,4 +1,4 @@
-import { DeleteTwoTone } from '@ant-design/icons';
+import { DeleteTwoTone, PlusCircleTwoTone } from '@ant-design/icons';
 import { Space } from 'antd';
 import React from 'react';
 import { colors } from 'src/assets/themes/colors';
@@ -64,7 +64,11 @@ const TaskList = ({ tasks, user, week, year, setTasks }: TaskListProps) => {
           </li>
         ))}
       </ul>
-      <button onClick={addNewTask}>Add task</button>
+      <PlusCircleTwoTone
+        className={styles.addButton}
+        onClick={addNewTask}
+        twoToneColor={colors.plusIcon}
+      />
     </div>
   );
 };

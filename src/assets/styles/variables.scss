@@ -1,14 +1,32 @@
-$task-block-height: 50px;
-$task-block-width: 50px;
+$main-color-border: #aaaaaa;
+$empty-color-border: #e9e9e9;
+$status-color: #444444;
 
-$task-block-border: 1px solid #000;
+$max-width-week-page-block: 750px;
+$margin-top-week-page-block: 20px;
 
-$task-block-spacing: 2px;
+$state-block-height: 30px;
+$state-block-width: 30px;
 
-$task-th-block-height: 45px;
+$state-block-border: 1px solid $main-color-border;
+
+$state-spacing-row: 10px;
+$state-spacing-column: 3px;
+
+$header-block-height: 25px;
 
 $small-title-font-size: 24px;
 $medium-title-font-size: 32px;
 $large-title-font-size: 42px;
 
 $distance-between-line: 5px;
+
+$state-padding: 0px;
+
+$fulldone-from: 2px;
+$fulldone-to: 4px;
+$fulldone-empty-space: 1px;
+$delay-size: 13px;
+$x-size: 15px;
+
+$states-width: calc($state-block-height * 7 + $state-spacing-column * 7);

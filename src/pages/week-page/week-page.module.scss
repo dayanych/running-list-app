@@ -1,16 +1,13 @@
 @import "../../assets/styles/variables";
 
 .mainBlock {
+  max-width: $max-width-week-page-block;
+  margin: $margin-top-week-page-block auto 0;
   display: flex;
   justify-content: center;
-  gap: $distance-between-line;
 }
 
 .tasksList {
-  margin-top: $task-th-block-height;
-  padding-top: $task-block-spacing;
-}
-
-.title {
-  text-align: center;
+  margin-top: $header-block-height;
+  padding-top: $state-spacing-row;
 }

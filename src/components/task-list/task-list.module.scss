@@ -6,11 +6,11 @@ $paragraph-font-size: 18px;
 .list {
   display: flex;
   flex-direction: column;
-  row-gap: $task-block-spacing;
+  row-gap: $state-spacing-row;
 }
 
 .taskItemBlock {
-  height: $task-block-height;
+  height: $state-block-height;
   display: flex;
   align-items: center;
 
@@ -26,4 +26,9 @@ $paragraph-font-size: 18px;
 .paragraphItem {
   margin-bottom: 0 !important;
   font-size: $paragraph-font-size;
+}
+
+.addButton {
+  margin-top: 10px;
+  font-size: 25px;
 }

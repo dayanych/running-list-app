@@ -1,1 +1,4 @@
-export const colors = { dangerIcon: '#da3633' };
+export const colors = {
+  dangerIcon: '#da3633',
+  plusIcon: '#aaaaaa',
+};
