@@ -6,7 +6,7 @@ import { User } from 'src/common/entities/user';
 import { getAuthErrorMessage } from 'src/common/helpers/get-auth-error-message';
 import { UserLoginData } from 'src/common/types/user-login-data';
 import { UserRegistrationData } from 'src/common/types/user-registration-data';
-import { UsersDal } from 'src/data-access-logic/user/users.dal';
+import { UsersDal } from 'src/data-access-logic/users/users.dal';
 import { AuthService } from 'src/service/auth/auth.service';
 import { setUser, unsetUser } from 'src/store/slices/user';
 
