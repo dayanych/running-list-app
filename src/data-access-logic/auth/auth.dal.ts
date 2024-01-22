@@ -52,6 +52,10 @@ export class AuthDal {
     }
   }
 
+  public static async logout(): Promise<void> {
+    await AuthService.logout();
+  }
+
   public static listenAuthStateChange(dispatch: Dispatch<UnknownAction>) {
     const params = {
       onLogin: async (userId: string) => {
