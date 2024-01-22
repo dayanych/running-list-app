@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useUser } from 'src/common/hooks/use-auth';
 import styles from 'src/components/header/header.module.scss';
+import { AuthDal } from 'src/data-access-logic/auth/auth.dal';
 
 const Header = () => {
   const user = useUser();
@@ -25,6 +26,11 @@ const Header = () => {
                 <Link to="/registration">Registration</Link>
               </li>
             </>
+          )}
+          {user && (
+            <li onClick={AuthDal.logout}>
+              <Link to="/">Logout</Link>
+            </li>
           )}
         </ul>
       </nav>

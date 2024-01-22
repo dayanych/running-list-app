@@ -43,6 +43,10 @@ export class AuthService {
     return userCredential.user;
   };
 
+  public static logout = async (): Promise<void> => {
+    await auth.signOut();
+  };
+
   public static listenAuthStateChange(params: ListenAuthStateChangeParams) {
     onAuthStateChanged(auth, async (user) => {
       if (!user) {
